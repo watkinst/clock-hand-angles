@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/watkinst/clock-hand-angles/issues"
   },
-  "homepage": "https://github.com/watkinst/clock-hand-angles#readme"
+  "homepage": "https://github.com/watkinst/clock-hand-angles#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
