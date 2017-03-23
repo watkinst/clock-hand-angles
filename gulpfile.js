@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
-var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
@@ -25,8 +24,6 @@ gulp.task('minify-css', function () {
   return gulp.src('./src/css/cha.css')
     // Minify
     .pipe(cleanCSS())
-    // Rename
-    .pipe(rename('cha.css'))
     // Write to dist folder
     .pipe(gulp.dest('./dist/css'));
 });
@@ -37,7 +34,6 @@ gulp.task('uglify-js', function (cb) {
   pump([
       gulp.src('./src/js/cha.js'),
       uglify(),
-      rename('cha.js'),
       gulp.dest('./dist/js')
     ],
     cb
