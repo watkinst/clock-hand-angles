@@ -1,0 +1,27 @@
+{
+  "name": "clock-hand-angles",
+  "version": "1.0.0",
+  "description": "A visual guide to where every angle between the hour and minute hand occurs on an analog clock.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watkinst/clock-hand-angles.git"
+  },
+  "keywords": [
+    "analog",
+    "clock",
+    "hand",
+    "angles",
+    "javascript",
+    "canvas"
+  ],
+  "author": "Trevor Watkinson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watkinst/clock-hand-angles/issues"
+  },
+  "homepage": "https://github.com/watkinst/clock-hand-angles#readme"
+}
