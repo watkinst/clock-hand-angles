@@ -26,6 +26,9 @@
   "homepage": "https://github.com/watkinst/clock-hand-angles#readme",
   "devDependencies": {
     "del": "^2.2.2",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.2.2"
   }
 }
