@@ -1,6 +1,6 @@
 {
   "name": "clock-hand-angles",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "A visual guide to where every angle between the hour and minute hand occurs on an analog clock.",
   "main": "index.html",
   "scripts": {
