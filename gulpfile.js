@@ -6,12 +6,12 @@ var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 
-// Clean out the dist folder
+// Clean out the dist folder and sub-folders
 gulp.task('clean', function () {
   return del([
     './dist/index.html',
-    './dist/css/*',
-    './dist/js/*'
+    './dist/css/cha.css',
+    './dist/js/cha.js'
   ]);
 });
 
@@ -22,7 +22,7 @@ gulp.task('copy-html', function () {
 
 // Minify the css.
 gulp.task('minify-css', function () {
-  return gulp.src('./src/css/*.css')
+  return gulp.src('./src/css/cha.css')
     // Minify
     .pipe(cleanCSS())
     // Rename
@@ -35,7 +35,7 @@ gulp.task('minify-css', function () {
 gulp.task('uglify-js', function (cb) {
   // Using pump for better error handling
   pump([
-      gulp.src('./src/js/*.js'),
+      gulp.src('./src/js/cha.js'),
       uglify(),
       rename('cha.js'),
       gulp.dest('./dist/js')
