@@ -9,9 +9,9 @@ var pump = require('pump');
 // Clean out the dist folder
 gulp.task('clean', function () {
   return del([
-    'dist/index.html',
-    'dist/css/*',
-    'dist/js/*'
+    './dist/index.html',
+    './dist/css/*',
+    './dist/js/*'
   ]);
 });
 
@@ -22,23 +22,23 @@ gulp.task('copy-html', function () {
 
 // Minify the css.
 gulp.task('minify-css', function () {
-  return gulp.src('src/css/*.css')
+  return gulp.src('./src/css/*.css')
     // Minify
     .pipe(cleanCSS())
     // Rename
     .pipe(rename('cha.css'))
     // Write to dist folder
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 // Uglify the JS.
 gulp.task('uglify-js', function (cb) {
   // Using pump for better error handling
   pump([
-      gulp.src('src/js/*.js'),
+      gulp.src('./src/js/*.js'),
       uglify(),
       rename('cha.js'),
-      gulp.dest('dist/js')
+      gulp.dest('./dist/js')
     ],
     cb
   );
@@ -52,4 +52,20 @@ gulp.task('default', function (done) {
       'uglify-js',
       done
   );
+});
+
+// Watch files
+gulp.task('watch', function () {
+    gulp.watch('./src/css/cha.css', ['minify-css']);
+    gulp.watch('./src/index.html', ['copy-html']);
+    gulp.watch('./src/js/cha.js', ['uglify-js']);
+});
+
+// Perform dev tasks
+gulp.task('dev', function (done) {
+  runSequence(
+    'default',
+    'watch',
+    done
+  )
 });
