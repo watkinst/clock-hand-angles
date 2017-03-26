@@ -4,6 +4,9 @@ var cleanCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+var sourcemaps = require('gulp-sourcemaps');
+var babel = require('gulp-babel');
+var concat = require('gulp-concat');
 
 // Clean out the dist folder and sub-folders
 gulp.task('clean', function () {
@@ -32,8 +35,14 @@ gulp.task('minify-css', function () {
 gulp.task('uglify-js', function (cb) {
   // Using pump for better error handling
   pump([
-      gulp.src('./src/js/cha.js'),
+      gulp.src('./src/js/*.js'),
+      sourcemaps.init(),
+      babel({
+        presets: ['es2015']
+      }),
+      concat('cha.js'),
       uglify(),
+      sourcemaps.write('.'),
       gulp.dest('./dist/js')
     ],
     cb
