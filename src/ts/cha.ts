@@ -46,7 +46,7 @@ let clock = (function() {
 
   // slightly shrink the radius to allow for some
   // padding between the clock and the canvas edge
-  radius = radius * 0.90
+  radius = radius * 0.90;
 
   // render the initial clock
   draw(ctx);
