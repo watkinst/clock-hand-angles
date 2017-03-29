@@ -5,15 +5,15 @@ var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 var sourcemaps = require('gulp-sourcemaps');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
+var ts = require('gulp-typescript');
+var tsProject = ts.createProject('tsconfig.json');
 
 // Clean out the dist folder and sub-folders
 gulp.task('clean', function () {
   return del([
     './dist/index.html',
-    './dist/css/cha.css',
-    './dist/js/cha.js'
+    './dist/css/*',
+    './dist/js/*'
   ]);
 });
 
@@ -35,12 +35,9 @@ gulp.task('minify-css', function () {
 gulp.task('uglify-js', function (cb) {
   // Using pump for better error handling
   pump([
-      gulp.src('./src/js/*.js'),
+      tsProject.src(),
       sourcemaps.init(),
-      babel({
-        presets: ['es2015']
-      }),
-      concat('cha.js'),
+      tsProject(),
       uglify(),
       sourcemaps.write('.'),
       gulp.dest('./dist/js')
@@ -63,7 +60,7 @@ gulp.task('default', function (done) {
 gulp.task('watch', function () {
     gulp.watch('./src/css/cha.css', ['minify-css']);
     gulp.watch('./src/index.html', ['copy-html']);
-    gulp.watch('./src/js/cha.js', ['uglify-js']);
+    gulp.watch('./src/ts/*.ts', ['uglify-js']);
 });
 
 // Perform dev tasks
