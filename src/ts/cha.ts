@@ -28,7 +28,7 @@ let clock = (function() {
 
   // disable typing in the number inputs
   let numberInputs: NodeListOf<Element> = document.querySelectorAll('[type="number"]');
-  for (let i = 0; i < numberInputs.length; i++) {
+  for (let i: number = 0; i < numberInputs.length; i++) {
     numberInputs[i].addEventListener("keypress", function(evt) {
       evt.preventDefault();
     });
