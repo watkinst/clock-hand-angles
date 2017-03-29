@@ -225,7 +225,7 @@ let clock = (function() {
   }
 
   function drawFace(ctx: CanvasRenderingContext2D, radius: number): void {
-    let grad: CanvasGradient;
+    let grad: CanvasGradient = null;
     ctx.beginPath();
 
     // Parameter          Description
