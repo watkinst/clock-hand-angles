@@ -205,7 +205,7 @@ let clock = (function() {
   }
 
   // draws the time on the clock on the right
-  function drawAdditionalTime(ctx: CanvasRenderingContext2D, radius: number, time: timeToRender): void{
+  function drawAdditionalTime(ctx: CanvasRenderingContext2D, radius: number, time: timeToRender): void {
     let h: number = Number(time.hour);
     let m: number = Number(time.minutes);
     let s: number = Number(time.seconds);
@@ -263,7 +263,7 @@ let clock = (function() {
     ctx.fill();
   }
 
-  function drawDegreeNumbers(ctx: CanvasRenderingContext2D, radius: number, reverse: boolean):void {
+  function drawDegreeNumbers(ctx: CanvasRenderingContext2D, radius: number, reverse: boolean): void {
     let ang: number = 0;
 
     ctx.font = radius*0.04 + "px arial";
