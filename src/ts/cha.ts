@@ -28,7 +28,7 @@ let clock = (function() {
 
   // disable typing in the number inputs
   let numberInputs: NodeListOf<Element> = document.querySelectorAll('[type="number"]');
-  for (let i = 0; i < numberInputs.length; i++) {
+  for (let i: number = 0; i < numberInputs.length; i++) {
     numberInputs[i].addEventListener("keypress", function(evt) {
       evt.preventDefault();
     });
@@ -46,7 +46,7 @@ let clock = (function() {
 
   // slightly shrink the radius to allow for some
   // padding between the clock and the canvas edge
-  radius = radius * 0.90
+  radius = radius * 0.90;
 
   // render the initial clock
   draw(ctx);
@@ -69,8 +69,6 @@ let clock = (function() {
     // distance moved per second
     let hourHandDps: number = 0.008333333333333;
     let minuteHandDps: number = 0.1;
-
-
 
     // holds any times with a matching
     // angle between the clock hands
@@ -207,7 +205,7 @@ let clock = (function() {
   }
 
   // draws the time on the clock on the right
-  function drawAdditionalTime(ctx: CanvasRenderingContext2D, radius: number, time: timeToRender): void{
+  function drawAdditionalTime(ctx: CanvasRenderingContext2D, radius: number, time: timeToRender): void {
     let h: number = Number(time.hour);
     let m: number = Number(time.minutes);
     let s: number = Number(time.seconds);
@@ -227,7 +225,7 @@ let clock = (function() {
   }
 
   function drawFace(ctx: CanvasRenderingContext2D, radius: number): void {
-    let grad: CanvasGradient;
+    let grad: CanvasGradient = null;
     ctx.beginPath();
 
     // Parameter          Description
@@ -265,7 +263,7 @@ let clock = (function() {
     ctx.fill();
   }
 
-  function drawDegreeNumbers(ctx: CanvasRenderingContext2D, radius: number, reverse: boolean):void {
+  function drawDegreeNumbers(ctx: CanvasRenderingContext2D, radius: number, reverse: boolean): void {
     let ang: number = 0;
 
     ctx.font = radius*0.04 + "px arial";
