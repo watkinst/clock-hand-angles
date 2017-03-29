@@ -11,9 +11,11 @@
     "url": "git+https://github.com/watkinst/clock-hand-angles.git"
   },
   "keywords": [
+    "typescript",
     "javascript",
     "es2015",
     "canvas",
+    "gulp"
   ],
   "author": "Trevor Watkinson",
   "license": "MIT",
