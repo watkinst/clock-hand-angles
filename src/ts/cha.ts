@@ -70,8 +70,6 @@ let clock = (function() {
     let hourHandDps: number = 0.008333333333333;
     let minuteHandDps: number = 0.1;
 
-
-
     // holds any times with a matching
     // angle between the clock hands
     let timesToRender: timeToRender[] = [];
