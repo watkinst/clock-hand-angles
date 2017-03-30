@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
-var cleanCSS = require('gulp-clean-css');
+var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
@@ -23,10 +23,12 @@ gulp.task('copy-html', function () {
 });
 
 // Minify the css.
-gulp.task('minify-css', function () {
-  return gulp.src('./src/css/cha.css')
+gulp.task('minify-scss', function () {
+  return gulp.src('./src/scss/cha.scss')
+    .pipe(sourcemaps.init())
     // Minify
-    .pipe(cleanCSS())
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write('.'))
     // Write to dist folder
     .pipe(gulp.dest('./dist/css'));
 });
@@ -46,11 +48,12 @@ gulp.task('uglify-js', function (cb) {
   );
 });
 
+// Run all tasks
 gulp.task('default', function (done) {
   return runSequence(
       'clean',
       'copy-html',
-      'minify-css',
+      'minify-scss',
       'uglify-js',
       done
   );
@@ -58,9 +61,9 @@ gulp.task('default', function (done) {
 
 // Watch files
 gulp.task('watch', function () {
-    gulp.watch('./src/css/cha.css', ['minify-css']);
+    gulp.watch('./src/scss/**/*.scss', ['minify-scss']);
     gulp.watch('./src/index.html', ['copy-html']);
-    gulp.watch('./src/ts/*.ts', ['uglify-js']);
+    gulp.watch('./src/ts/**/*.ts', ['uglify-js']);
 });
 
 // Perform dev tasks

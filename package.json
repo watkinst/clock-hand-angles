@@ -1,6 +1,6 @@
 {
   "name": "clock-hand-angles",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A visual guide to where every angle between the hour and minute hand occurs on an analog clock.",
   "main": "index.html",
   "scripts": {
@@ -15,7 +15,13 @@
     "javascript",
     "es2015",
     "canvas",
-    "gulp"
+    "gulp",
+    "gulp-sass",
+    "gulp-sourcemaps",
+    "gulp-typescript",
+    "gulp-uglify",
+    "pump",
+    "run-sequence"
   ],
   "author": "Trevor Watkinson",
   "license": "MIT",
@@ -26,7 +32,7 @@
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.4",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-typescript": "^3.1.6",
     "gulp-uglify": "^2.1.2",
