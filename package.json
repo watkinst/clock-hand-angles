@@ -11,6 +11,10 @@
     "url": "git+https://github.com/watkinst/clock-hand-angles.git"
   },
   "keywords": [
+    "analog",
+    "clock",
+    "hand",
+    "angles",
     "typescript",
     "javascript",
     "es2015",
