@@ -7,34 +7,34 @@ let clock = (function() {
   }
 
   // clock on the left that is controlled by the time inputs
-  let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector('#canvas');
+  const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector('#canvas');
 
   // the panel that holds the second clock
-  let panel2: HTMLElement = <HTMLElement>document.querySelector('.clock-panel-2');
+  const panel2: HTMLElement = <HTMLElement>document.querySelector('.clock-panel-2');
 
   // where we append the clock that appears on the right
-  let secondCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector('.second-canvas');
+  const secondCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector('.second-canvas');
 
   // areas to display exact angles from both clocks
-  let c1_negAngle: HTMLElement = <HTMLElement>document.querySelector('.c1-neg-angle');
-  let c1_posAngle: HTMLElement = <HTMLElement>document.querySelector('.c1-pos-angle');
-  let c2_negAngle: HTMLElement = <HTMLElement>document.querySelector('.c2-neg-angle');
-  let c2_posAngle: HTMLElement = <HTMLElement>document.querySelector('.c2-pos-angle');
+  const c1_negAngle: HTMLElement = <HTMLElement>document.querySelector('.c1-neg-angle');
+  const c1_posAngle: HTMLElement = <HTMLElement>document.querySelector('.c1-pos-angle');
+  const c2_negAngle: HTMLElement = <HTMLElement>document.querySelector('.c2-neg-angle');
+  const c2_posAngle: HTMLElement = <HTMLElement>document.querySelector('.c2-pos-angle');
 
   // the hour, minute, and second number inputs
-  let hour: HTMLInputElement = <HTMLInputElement>document.querySelector('#hour');
-  let minute: HTMLInputElement = <HTMLInputElement>document.querySelector('#minute');
-  let second: HTMLInputElement = <HTMLInputElement>document.querySelector('#second');
+  const hour: HTMLInputElement = <HTMLInputElement>document.querySelector('#hour');
+  const minute: HTMLInputElement = <HTMLInputElement>document.querySelector('#minute');
+  const second: HTMLInputElement = <HTMLInputElement>document.querySelector('#second');
 
   // disable typing in the number inputs
-  let numberInputs: NodeListOf<Element> = document.querySelectorAll('[type="number"]');
+  const numberInputs: NodeListOf<Element> = document.querySelectorAll('[type="number"]');
   for (let i: number = 0; i < numberInputs.length; i++) {
     numberInputs[i].addEventListener("keypress", function(evt) {
       evt.preventDefault();
     });
   }
 
-  let ctx: CanvasRenderingContext2D = canvas.getContext("2d");
+  const ctx: CanvasRenderingContext2D = canvas.getContext("2d");
   let radius: number = canvas.height / 2;
 
   let outerAngleDegrees: number = 0;
@@ -67,12 +67,12 @@ let clock = (function() {
 
   function findSameAngle(): void {
     // distance moved per second
-    let hourHandDps: number = 0.008333333333333;
-    let minuteHandDps: number = 0.1;
+    const hourHandDps: number = 0.008333333333333;
+    const minuteHandDps: number = 0.1;
 
     // holds any times with a matching
     // angle between the clock hands
-    let timesToRender: timeToRender[] = [];
+    const timesToRender: timeToRender[] = [];
 
     // degrees moved and difference
     let hourHandDegreesMoved: number = 0;
@@ -80,7 +80,7 @@ let clock = (function() {
     let difference: number = 0;
 
     // our tolerance for error
-    let acceptedDiff: number = 0.001;
+    const acceptedDiff: number = 0.001;
 
     // the hour we are currently checking
     let currentHour: number = 0;
