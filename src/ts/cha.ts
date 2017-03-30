@@ -1,4 +1,4 @@
-let clock = (function() {
+const clock = (function() {
 
   interface timeToRender {
     hour: number,
