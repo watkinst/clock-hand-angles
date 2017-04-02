@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clock Hand Angles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/cha.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="jumbotron">
+          <h1 class="title">Clock Hand Angles</h1>
+          <p>
+            A visual guide to where every angle between the hour and minute
+            hand occurs on an analog clock! Believe it or not, any given angle
+            only ever forms a valid time twice! The only exceptions to this rule
+            are zero degrees and 180 degrees, which each only occur once.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <form name="timeform" class="form-inline time-form">
+              <div class="row">
+                <div class="col-xs-12 col-md-4">
+                  <div class="input-group">
+                    <span class="input-group-addon" class="">Hour</span>
+                    <input type="number" name="hour" id="hour" class="form-control hour" min="1" max="12" step="1" value="12" oninput="clock.draw(clock.getContext())">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                  <div class="input-group">
+                    <span class="input-group-addon" class="">Minute</span>
+                    <input type="number" name="minute" id="minute" class="form-control minute" min="0" max="59" step="1" value="0" oninput="clock.draw(clock.getContext())">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                  <div class="input-group">
+                    <span class="input-group-addon" class="">Second</span>
+                    <input type="number" name="second" id="second" class="form-control second" min="0" max="59" step="1" value="0" oninput="clock.draw(clock.getContext())">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="clock-panel clock-panel-1">
+              <div class="row info">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                      <span class="label label-primary angle-label c1-pos-angle"></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <span class="label label-danger angle-label c1-neg-angle"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 first-canvas">
+                  <!-- must specify how many pixels to draw on, using width and height properties -->
+                  <canvas id="canvas" class="canvas" width="800" height="800"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div class="clock-panel clock-panel-2">
+              <div class="row info">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                      <span class="label label-primary angle-label c2-pos-angle"></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <span class="label label-danger angle-label c2-neg-angle"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 second-canvas">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/cha.js"></script>
+</body>
+</html>
