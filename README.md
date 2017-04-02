@@ -34,6 +34,6 @@ Inspired by a recruiting question I saw on LinkedIn that asked what the angle be
 MIT License
 https://choosealicense.com/licenses/mit/
 
-[1]: http://watkinst.github.io/clock-hand-angles
-[small]: http://watkinst.github.io/clock-hand-angles/img/cha_sm.png
-[large]: http://watkinst.github.io/clock-hand-angles/img/cha_lg.png
+[1]: https://watkinst.github.io/clock-hand-angles/
+[small]: https://watkinst.github.io/clock-hand-angles/img/cha_sm.png
+[large]: https://watkinst.github.io/clock-hand-angles/img/cha_lg.png
