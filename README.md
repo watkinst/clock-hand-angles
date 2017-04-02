@@ -1,10 +1,7 @@
 # Clock-Hand-Angles
-A visual guide to where every angle between the hour and minute hand occurs on an analog clock. Live link: [Clock Hand Angles][1]
+A visual guide to where every angle between the hour and minute hand occurs on an analog clock.
 
----
-
-## Screenshot
-[![](https://watkinst.github.io/clock-hand-angles/img/cha_sm.png)][large]
+Live link: [Clock Hand Angles][1]
 
 ---
 
@@ -35,4 +32,3 @@ MIT License
 https://choosealicense.com/licenses/mit/
 
 [1]: https://watkinst.github.io/clock-hand-angles/
-[large]: https://watkinst.github.io/clock-hand-angles/img/cha_lg.png
