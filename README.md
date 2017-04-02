@@ -4,7 +4,7 @@ A visual guide to where every angle between the hour and minute hand occurs on a
 ---
 
 ## Screenshot
-[![][small]][large]
+[![](https://watkinst.github.io/clock-hand-angles/img/cha_sm.png)][large]
 
 ---
 
@@ -35,5 +35,4 @@ MIT License
 https://choosealicense.com/licenses/mit/
 
 [1]: https://watkinst.github.io/clock-hand-angles/
-[small]: https://watkinst.github.io/clock-hand-angles/img/cha_sm.png
 [large]: https://watkinst.github.io/clock-hand-angles/img/cha_lg.png
